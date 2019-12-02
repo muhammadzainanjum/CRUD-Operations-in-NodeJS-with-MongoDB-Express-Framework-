@@ -1,0 +1,96 @@
+
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body {
+  margin: 0;
+  font-family: "Lato", sans-serif;
+}
+
+.sidebar {
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  background-color: #3a559f;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+}
+.main {
+            margin-left: 160px;
+            /* Same as the width of the sidenav */
+            font-size: 28px;
+            /* Increased text to enable scrolling */
+            padding: 0px 10px;
+        }
+.sidebar a {
+  display: block;
+  color: white;
+  padding: 16px;
+  text-decoration: none;
+}
+ 
+.sidebar a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.sidebar a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+
+div.content {
+  margin-left: 200px;
+  padding: 1px 16px;
+  height: 1000px;
+}
+
+@media screen and (max-width: 700px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  .sidebar a {float: left;}
+  div.content {margin-left: 0;}
+}
+.center {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+        }
+p{
+    font-size: 35px;
+}
+.paragraph{
+    padding-top: 30px;
+}
+
+@media screen and (max-width: 400px) {
+  .sidebar a {
+    text-align: center;
+    float: none;
+  }
+}
+</style>
+</head>
+    <div class="sidebar">
+        <br><br>
+        <a href="/profile"><img src="images/logo.png" style="width: 50%;" class="center"></a>
+        <br><br>
+        <a href="/edit_profile" class="center" >Edit Profile</a>
+        <a href="/changePassword" class="center" >Change Password</a>
+        <a href="/logout" class="center">Logout</a>
+    </div>
+
+    <div class="center paragraph">
+
+      <form method="POST" action="/delete_account">
+        <p>Enter Password to delete your account</p><br>
+        <input type="password" class="form-control"  placeholder="Password" name="password" required><br>
+        <input type="password" class="form-control"  placeholder="Confirm Password" name="confirmpassword" required><br>
+        <button type="submit" class="btn btn-primary "  >Delete Account</button>
+      </form>
+    </div>
